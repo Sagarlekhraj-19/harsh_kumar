@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slice of Heaven | Premium Pizza</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        heading: ['"Alfa Slab One"', 'serif'],
+                        body: ['"DM Sans"', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            amber: '#F59E0B',
+                            dark: '#1C1917',
+                            accent: '#D97706'
+                        }
+                    },
+                    animation: {
+                        'fade-in-up': 'fadeInUp 1s ease-out forwards',
+                        'float': 'float 6s ease-in-out infinite',
+                        'blob': 'blob 7s infinite',
+                    },
+                    keyframes: {
+                        fadeInUp: {
+                            '0%': { opacity: '0', transform: 'translateY(20px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                        },
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-10px)' },
+                        },
+                        blob: {
+                            "0%": { transform: "translate(0px, 0px) scale(1)" },
+                            "33%": { transform: "translate(30px, -50px) scale(1.1)" },
+                            "66%": { transform: "translate(-20px, 20px) scale(0.9)" },
+                            "100%": { transform: "translate(0px, 0px) scale(1)" }
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .hero-bg {
+            background: linear-gradient(to bottom, rgba(28, 25, 23, 0.8), rgba(28, 25, 23, 0.5)), url('https://images.unsplash.com/photo-1513104890138-7c749659a591?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+        .text-shadow {
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+    </style>
+</head>
+<body>
+    <nav class="bg-stone-900/95 backdrop-blur-sm text-stone-100 sticky top-0 z-50 shadow-xl border-b border-stone-800 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <div class="flex items-center group cursor-pointer">
+                    <img src="https://img.icons8.com/fluency/96/pizza.png" alt="Slice of Heaven Logo" class="h-10 w-auto mr-3 transform group-hover:rotate-12 transition-transform duration-300">
+                    <span class="font-heading text-2xl tracking-wider group-hover:text-amber-400 transition-colors duration-300 text-amber-50">Slice of Heaven</span>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-center space-x-8">
+                        <a href="#home" class="hover:text-amber-400 transition-colors px-3 py-2 text-sm font-bold tracking-wide text-stone-300">HOME</a>
+                        <a href="#menu" class="hover:text-amber-400 transition-colors px-3 py-2 text-sm font-bold tracking-wide text-stone-300">MENU</a>
+                        <a href="#about" class="hover:text-amber-400 transition-colors px-3 py-2 text-sm font-bold tracking-wide text-stone-300">ABOUT</a>
+                        <a href="#contact" class="bg-gradient-to-r from-amber-500 to-amber-700 text-stone-50 hover:from-amber-400 hover:to-amber-600 px-6 py-2.5 rounded-full text-sm font-bold shadow-lg transform hover:-translate-y-0.5 transition-all duration-300">
+                            ORDER NOW
+                        </a>
+                    </div>
+                </div>
+                <div class="md:hidden">
+                    <button id="mobile-menu-btn" class="text-stone-300 hover:text-white focus:outline-none p-2">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div id="mobile-menu" class="hidden md:hidden bg-stone-900 border-t border-stone-800 absolute w-full">
+            <div class="px-4 pt-2 pb-6 space-y-2">
+                <a href="#home" class="block px-3 py-3 rounded-md text-base font-bold text-stone-300 hover:bg-stone-800 hover:text-amber-400 transition-colors">Home</a>
+                <a href="#menu" class="block px-3 py-3 rounded-md text-base font-bold text-stone-300 hover:bg-stone-800 hover:text-amber-400 transition-colors">Menu</a>
+                <a href="#about" class="block px-3 py-3 rounded-md text-base font-bold text-stone-300 hover:bg-stone-800 hover:text-amber-400 transition-colors">About</a>
+                <a href="#contact" class="block px-3 py-3 rounded-md text-base font-bold text-stone-900 bg-amber-500 mt-4 text-center">Contact Us</a>
+            </div>
+        </div>
+    </nav>
+
+    <section id="home" class="hero-bg min-h-[85vh] flex items-center justify-center text-center px-4 relative overflow-hidden">
+        <div class="absolute inset-0 bg-stone-950/30"></div>
+        <div class="max-w-5xl mx-auto relative z-10 animate-fade-in-up">
+            <span class="inline-block py-1 px-3 rounded-full bg-amber-500/20 text-amber-200 text-sm font-bold mb-6 border border-amber-500/30 backdrop-blur-sm shadow-sm">
+                🔥 VOTED BEST PIZZA IN TOWN
+            </span>
+            <h1 class="font-heading text-5xl md:text-7xl lg:text-8xl text-stone-50 mb-8 leading-tight text-shadow">
+                Taste the <span class="text-transparent bg-clip-text bg-gradient-to-r from-amber-300 to-amber-600">Heaven</span><br>
+                in Every Slice
+            </h1>
+            <p class="text-xl md:text-2xl text-stone-200 mb-12 max-w-2xl mx-auto font-light leading-relaxed">
+                Hand-tossed artisan dough, garden-fresh ingredients, and a secret family recipe that brings pure joy to your table.
+            </p>
+            <div class="flex flex-col sm:flex-row justify-center gap-6">
+                <a href="#menu" class="group relative px-8 py-4 bg-amber-600 rounded-full overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1">
+                    <div class="absolute inset-0 w-full h-full bg-gradient-to-r from-amber-500 to-amber-700 opacity-100 group-hover:opacity-90 transition-opacity"></div>
+                    <span class="relative text-stone-50 font-bold text-lg tracking-wide flex items-center justify-center">
+                        View Menu <i class="fas fa-arrow-right ml-2 transform group-hover:translate-x-1 transition-transform"></i>
+                    </span>
+                </a>
+                <a href="#contact" class="px-8 py-4 bg-stone-50/10 backdrop-blur-md border border-stone-50/30 text-stone-50 rounded-full font-bold text-lg hover:bg-stone-50/20 transition-all duration-300 shadow-lg hover:shadow-xl flex items-center justify-center">
+                    Contact Us
+                </a>
+            </div>
+        </div>
+        
+        <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce text-stone-400">
+            <i class="fas fa-chevron-down text-2xl"></i>
+        </div>
+    </section>
+
+    <section id="menu" class="py-24 bg-stone-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-20">
+                <span class="text-amber-700 font-bold tracking-widest text-sm uppercase">Delicious Choices</span>
+                <h2 class="font-heading text-4xl md:text-5xl text-stone-800 mt-2 mb-6">Our Favorites</h2>
+                <div class="w-24 h-1.5 bg-gradient-to-r from-amber-400 to-amber-600 mx-auto rounded-full"></div>
+                <p class="mt-6 text-stone-600 max-w-2xl mx-auto text-lg">Crafted with passion, baked with love, and served with a smile.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+                <div class="group bg-white rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-500 overflow-hidden border border-stone-100 hover:-translate-y-2">
+                    <div class="h-64 overflow-hidden relative">
+                        <img src="https://images.unsplash.com/photo-1534308983496-4fabb1a015ee?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Classic Pepperoni" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700">
+                        <div class="absolute top-4 right-4 bg-amber-500 text-stone-900 font-bold px-4 py-1.5 rounded-full text-sm shadow-lg backdrop-blur-md bg-opacity-90">$16</div>
+                        <div class="absolute inset-0 bg-gradient-to-t from-stone-900/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    </div>
+                    <div class="p-8">
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="font-heading text-2xl text-stone-800 group-hover:text-amber-600 transition-colors">Classic Pepperoni</h3>
+                            <div class="flex text-amber-400 text-xs">
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                        <p class="text-stone-500 mb-6 leading-relaxed">Our signature tomato sauce, double layer of mozzarella, and crispy, savory pepperoni slices.</p>
+                        <button class="w-full bg-stone-900 text-stone-50 py-3.5 rounded-xl font-bold hover:bg-amber-500 hover:text-stone-900 transition-all duration-300 flex items-center justify-center gap-2 group-hover:shadow-lg">
+                            Add to Cart <i class="fas fa-shopping-bag"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="group bg-white rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-500 overflow-hidden border border-stone-100 hover:-translate-y-2">
+                    <div class="h-64 overflow-hidden relative">
+                        <img src="https://images.unsplash.com/photo-1513104890138-7c749659a591?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Margherita" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700">
+                        <div class="absolute top-4 right-4 bg-amber-500 text-stone-900 font-bold px-4 py-1.5 rounded-full text-sm shadow-lg backdrop-blur-md bg-opacity-90">$14</div>
+                        <div class="absolute inset-0 bg-gradient-to-t from-stone-900/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    </div>
+                    <div class="p-8">
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="font-heading text-2xl text-stone-800 group-hover:text-amber-600 transition-colors">Royal Margherita</h3>
+                            <div class="flex text-amber-400 text-xs">
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+                            </div>
+                        </div>
+                        <p class="text-stone-500 mb-6 leading-relaxed">Fresh basil leaves, imported buffalo mozzarella, cherry tomatoes, and extra virgin olive oil.</p>
+                        <button class="w-full bg-stone-900 text-stone-50 py-3.5 rounded-xl font-bold hover:bg-amber-500 hover:text-stone-900 transition-all duration-300 flex items-center justify-center gap-2 group-hover:shadow-lg">
+                            Add to Cart <i class="fas fa-shopping-bag"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="group bg-white rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-500 overflow-hidden border border-stone-100 hover:-translate-y-2">
+                    <div class="h-64 overflow-hidden relative">
+                        <img src="https://images.unsplash.com/photo-1628840042765-356cda07504e?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Veggie" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700">
+                        <div class="absolute top-4 right-4 bg-amber-500 text-stone-900 font-bold px-4 py-1.5 rounded-full text-sm shadow-lg backdrop-blur-md bg-opacity-90">$15</div>
+                        <div class="absolute inset-0 bg-gradient-to-t from-stone-900/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    </div>
+                    <div class="p-8">
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="font-heading text-2xl text-stone-800 group-hover:text-amber-600 transition-colors">Garden Special</h3>
+                            <div class="flex text-amber-400 text-xs">
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                        <p class="text-stone-500 mb-6 leading-relaxed">Loaded with bell peppers, mushrooms, red onions, black olives, and sweet golden corn.</p>
+                        <button class="w-full bg-stone-900 text-stone-50 py-3.5 rounded-xl font-bold hover:bg-amber-500 hover:text-stone-900 transition-all duration-300 flex items-center justify-center gap-2 group-hover:shadow-lg">
+                            Add to Cart <i class="fas fa-shopping-bag"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="mt-16 text-center">
+                <a href="#" class="inline-flex items-center font-bold text-stone-800 text-lg hover:text-amber-600 transition-colors group">
+                    View Full Menu <i class="fas fa-arrow-right ml-2 transform group-hover:translate-x-1 transition-transform"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-20 bg-stone-900 text-stone-50 relative overflow-hidden">
+        <div class="absolute top-0 left-0 w-64 h-64 bg-amber-500 rounded-full mix-blend-multiply filter blur-3xl opacity-10 animate-blob"></div>
+        <div class="absolute bottom-0 right-0 w-64 h-64 bg-amber-600 rounded-full mix-blend-multiply filter blur-3xl opacity-10 animate-blob animation-delay-2000"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+                <div class="p-8 bg-stone-800/50 backdrop-blur-sm rounded-3xl border border-stone-700 hover:bg-stone-800 transition-all duration-300 hover:scale-105">
+                    <div class="w-16 h-16 bg-amber-500/20 rounded-2xl flex items-center justify-center mx-auto mb-6 text-amber-400">
+                        <i class="fas fa-fire text-3xl"></i>
+                    </div>
+                    <h3 class="font-heading text-2xl mb-3 text-stone-100">Wood Fired</h3>
+                    <p class="text-stone-400 leading-relaxed">Baked to smoky perfection in our traditional Italian wood-fired ovens at 800°F.</p>
+                </div>
+                <div class="p-8 bg-stone-800/50 backdrop-blur-sm rounded-3xl border border-stone-700 hover:bg-stone-800 transition-all duration-300 hover:scale-105">
+                    <div class="w-16 h-16 bg-amber-500/20 rounded-2xl flex items-center justify-center mx-auto mb-6 text-amber-400">
+                        <i class="fas fa-motorcycle text-3xl"></i>
+                    </div>
+                    <h3 class="font-heading text-2xl mb-3 text-stone-100">Super Fast</h3>
+                    <p class="text-stone-400 leading-relaxed">Hot, fresh, and delicious delivery to your doorstep within 30 minutes, guaranteed.</p>
+                </div>
+                <div class="p-8 bg-stone-800/50 backdrop-blur-sm rounded-3xl border border-stone-700 hover:bg-stone-800 transition-all duration-300 hover:scale-105">
+                    <div class="w-16 h-16 bg-amber-500/20 rounded-2xl flex items-center justify-center mx-auto mb-6 text-amber-400">
+                        <i class="fas fa-leaf text-3xl"></i>
+                    </div>
+                    <h3 class="font-heading text-2xl mb-3 text-stone-100">Organic & Fresh</h3>
+                    <p class="text-stone-400 leading-relaxed">We source our vegetables from local farms and use only premium quality meats daily.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                
+                <div class="order-2 lg:order-1">
+                    <span class="text-amber-700 font-bold tracking-widest text-sm uppercase">Get in Touch</span>
+                    <h2 class="font-heading text-4xl md:text-5xl text-stone-800 mt-2 mb-6">Visit Slice of Heaven</h2>
+                    <p class="text-stone-600 mb-10 text-lg leading-relaxed">Come visit us for a dine-in experience or call to place an order. We look forward to serving you the best pizza in town.</p>
+                    
+                    <div class="space-y-6">
+                        <div class="group flex items-center p-6 bg-stone-50 rounded-2xl hover:bg-white hover:shadow-xl transition-all duration-300 border border-transparent hover:border-stone-100">
+                            <div class="bg-amber-100 p-4 rounded-full mr-6 group-hover:bg-amber-500 transition-colors duration-300">
+                                <i class="fas fa-phone text-amber-700 text-xl group-hover:text-stone-50 transition-colors"></i>
+                            </div>
+                            <div>
+                                <p class="font-bold text-stone-400 text-xs uppercase tracking-wider mb-1">Phone</p>
+                                <a href="tel:3474516658" class="text-xl font-bold text-stone-900 hover:text-amber-600 transition-colors">(347) 451-6658</a>
+                            </div>
+                        </div>
+                        
+                        <div class="group flex items-center p-6 bg-stone-50 rounded-2xl hover:bg-white hover:shadow-xl transition-all duration-300 border border-transparent hover:border-stone-100">
+                            <div class="bg-amber-100 p-4 rounded-full mr-6 group-hover:bg-amber-500 transition-colors duration-300">
+                                <i class="fas fa-envelope text-amber-700 text-xl group-hover:text-stone-50 transition-colors"></i>
+                            </div>
+                            <div>
+                                <p class="font-bold text-stone-400 text-xs uppercase tracking-wider mb-1">Email</p>
+                                <a href="mailto:amarlasi@icloud.com" class="text-xl font-bold text-stone-900 hover:text-amber-600 transition-colors">amarlasi@icloud.com</a>
+                            </div>
+                        </div>
+                        
+                        <div class="group flex items-center p-6 bg-stone-50 rounded-2xl hover:bg-white hover:shadow-xl transition-all duration-300 border border-transparent hover:border-stone-100">
+                            <div class="bg-amber-100 p-4 rounded-full mr-6 group-hover:bg-amber-500 transition-colors duration-300">
+                                <i class="fas fa-map-marker-alt text-amber-700 text-xl group-hover:text-stone-50 transition-colors"></i>
+                            </div>
+                            <div>
+                                <p class="font-bold text-stone-400 text-xs uppercase tracking-wider mb-1">Location</p>
+                                <p class="text-xl font-bold text-stone-900">Birmingham, AL 35219</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="order-1 lg:order-2 h-[500px] bg-stone-200 rounded-3xl overflow-hidden shadow-2xl relative border-4 border-white transform hover:scale-[1.01] transition-transform duration-500">
+                    <iframe 
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3328.6!2d-86.8!3d33.5!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88890289!2sBirmingham%2C%20AL%2035219!5e0!3m2!1sen!2sus!4v1620000000000!5m2!1sen!2sus" 
+                        width="100%" 
+                        height="100%" 
+                        style="border:0; filter: contrast(1.1) saturate(1.1);" 
+                        allowfullscreen="" 
+                        loading="lazy">
+                    </iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-stone-900 text-stone-300 pt-20 pb-10 border-t border-stone-800">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16 text-center md:text-left">
+                <div class="col-span-1 md:col-span-1">
+                    <span class="font-heading text-3xl text-amber-500 tracking-wider block mb-6">Slice of Heaven</span>
+                    <p class="text-stone-400 text-sm leading-relaxed mb-6">Serving the most delicious, authentic Italian pizzas in Birmingham since 2010.</p>
+                    <div class="flex justify-center md:justify-start space-x-4">
+                        <a href="#" class="w-10 h-10 rounded-full bg-stone-800 flex items-center justify-center text-stone-400 hover:bg-amber-500 hover:text-stone-900 transition-all duration-300"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-stone-800 flex items-center justify-center text-stone-400 hover:bg-amber-500 hover:text-stone-900 transition-all duration-300"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-stone-800 flex items-center justify-center text-stone-400 hover:bg-amber-500 hover:text-stone-900 transition-all duration-300"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="font-bold text-lg mb-6 text-stone-100">Quick Links</h4>
+                    <ul class="space-y-3 text-stone-400 text-sm">
+                        <li><a href="#" class="hover:text-amber-400 transition-colors">Home</a></li>
+                        <li><a href="#menu" class="hover:text-amber-400 transition-colors">Our Menu</a></li>
+                        <li><a href="#about" class="hover:text-amber-400 transition-colors">About Us</a></li>
+                        <li><a href="#contact" class="hover:text-amber-400 transition-colors">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold text-lg mb-6 text-stone-100">Opening Hours</h4>
+                    <ul class="space-y-3 text-stone-400 text-sm">
+                        <li class="flex justify-between md:justify-start gap-4"><span>Mon - Fri:</span> <span class="text-stone-300">10am - 10pm</span></li>
+                        <li class="flex justify-between md:justify-start gap-4"><span>Sat:</span> <span class="text-stone-300">10am - 11pm</span></li>
+                        <li class="flex justify-between md:justify-start gap-4"><span>Sun:</span> <span class="text-stone-300">11am - 9pm</span></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold text-lg mb-6 text-stone-100">Newsletter</h4>
+                    <p class="text-stone-400 text-sm mb-4">Subscribe for latest updates and offers.</p>
+                    <form class="flex flex-col gap-3">
+                        <input type="email" placeholder="Your Email" class="bg-stone-800 border border-stone-700 text-stone-100 px-4 py-2 rounded-lg focus:outline-none focus:border-amber-500 transition-colors">
+                        <button class="bg-amber-500 text-stone-900 font-bold py-2 rounded-lg hover:bg-amber-400 transition-colors">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+            
+            <div class="border-t border-stone-800 pt-8 text-center">
+                <p class="text-stone-500 text-sm">&copy; 2024 Slice of Heaven. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const btn = document.getElementById('mobile-menu-btn');
+        const menu = document.getElementById('mobile-menu');
+
+        btn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+        });
+
+        // Smooth Scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                menu.classList.add('hidden'); 
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Add scrolled state to nav
+        window.addEventListener('scroll', () => {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 50) {
+                nav.classList.add('shadow-lg');
+                nav.classList.add('bg-stone-900/95');
+            } else {
+                nav.classList.remove('shadow-lg');
+            }
+        });
+    </script>
+</body>
+</html>
